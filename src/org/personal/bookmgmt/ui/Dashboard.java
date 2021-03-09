@@ -15,7 +15,7 @@ public class Dashboard extends javax.swing.JFrame {
 
     private final BooksDao booksDao = new BooksDaoImpl();
 
-    private final String[] columns = new String[]{"ID", "Name", "Batch", "Faculty", "ELE", "ID2" };
+    private final String[] columns = new String[]{"ID", "Name", "Batch", "Faculty", "ELE", "Student Id" };
 
     private final DefaultTableModel model = new DefaultTableModel();
 
@@ -187,6 +187,7 @@ public class Dashboard extends javax.swing.JFrame {
         saveButton = new javax.swing.JButton();
         editOrUpdateButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         tablePanel = new javax.swing.JPanel();
         booksTableScrollPane = new javax.swing.JScrollPane();
         booksTable = new javax.swing.JTable();
@@ -198,26 +199,37 @@ public class Dashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        inputPanel.setBackground(new java.awt.Color(19, 21, 21));
         inputPanel.setPreferredSize(new java.awt.Dimension(400, 787));
 
+        userInputLabel.setBackground(new java.awt.Color(19, 21, 21));
+
+        bookNameLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        bookNameLabel.setForeground(new java.awt.Color(125, 226, 209));
         bookNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         bookNameLabel.setText("Student Name");
 
         bookNameTextField.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         bookNameTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        bookNameTextField.setBorder(null);
         bookNameTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bookNameTextFieldActionPerformed(evt);
             }
         });
 
+        publishedByLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        publishedByLabel.setForeground(new java.awt.Color(125, 226, 209));
         publishedByLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         publishedByLabel.setText("Faculty");
 
+        authorLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        authorLabel.setForeground(new java.awt.Color(125, 226, 209));
         authorLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         authorLabel.setText("Batch");
 
         authorTextField.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        authorTextField.setBorder(null);
         authorTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 authorTextFieldActionPerformed(evt);
@@ -225,26 +237,33 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         publishedByTextField.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        publishedByTextField.setBorder(null);
         publishedByTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 publishedByTextFieldActionPerformed(evt);
             }
         });
 
+        priceLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        priceLabel.setForeground(new java.awt.Color(125, 226, 209));
         priceLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         priceLabel.setText("ELE Points");
 
         priceTextField.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        priceTextField.setBorder(null);
         priceTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 priceTextFieldActionPerformed(evt);
             }
         });
 
+        priceLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        priceLabel1.setForeground(new java.awt.Color(125, 226, 209));
         priceLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         priceLabel1.setText("Student ID");
 
         id2TextField1.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        id2TextField1.setBorder(null);
         id2TextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 id2TextField1ActionPerformed(evt);
@@ -260,10 +279,11 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(userInputLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(userInputLabelLayout.createSequentialGroup()
                         .addGroup(userInputLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bookNameLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(authorLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(publishedByLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(priceLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(userInputLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(bookNameLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(authorLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(publishedByLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(priceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(userInputLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(priceTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
@@ -293,29 +313,43 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(publishedByTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(userInputLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(priceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(priceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(userInputLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(priceTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(priceLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(userInputLabelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(priceLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(id2TextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(userInputLabelLayout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(id2TextField1)
+                        .addContainerGap())))
         );
 
+        buttonPanel.setBackground(new java.awt.Color(19, 21, 21));
+
+        saveButton.setBackground(new java.awt.Color(51, 153, 137));
+        saveButton.setForeground(new java.awt.Color(255, 250, 251));
         saveButton.setText("Save");
+        saveButton.setBorderPainted(false);
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
             }
         });
 
+        editOrUpdateButton.setBackground(new java.awt.Color(51, 153, 137));
+        editOrUpdateButton.setForeground(new java.awt.Color(255, 250, 251));
         editOrUpdateButton.setText("Edit");
+        editOrUpdateButton.setBorderPainted(false);
         editOrUpdateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editOrUpdateButtonActionPerformed(evt);
             }
         });
 
+        deleteButton.setBackground(new java.awt.Color(51, 153, 137));
+        deleteButton.setForeground(new java.awt.Color(255, 250, 251));
         deleteButton.setText("Remove");
+        deleteButton.setBorderPainted(false);
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteButtonActionPerformed(evt);
@@ -343,8 +377,12 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(editOrUpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(125, 226, 209));
+        jLabel2.setText("Menu");
 
         javax.swing.GroupLayout inputPanelLayout = new javax.swing.GroupLayout(inputPanel);
         inputPanel.setLayout(inputPanelLayout);
@@ -356,20 +394,29 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(buttonPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(userInputLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(inputPanelLayout.createSequentialGroup()
+                .addGap(174, 174, 174)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         inputPanelLayout.setVerticalGroup(
             inputPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(inputPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(153, 153, 153)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(userInputLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
+                .addGap(23, 23, 23)
                 .addComponent(buttonPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(402, Short.MAX_VALUE))
+                .addContainerGap(218, Short.MAX_VALUE))
         );
 
         getContentPane().add(inputPanel, java.awt.BorderLayout.LINE_START);
 
-        booksTable.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
+        tablePanel.setBackground(new java.awt.Color(19, 21, 21));
+
+        booksTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(125, 226, 209)));
+        booksTable.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         booksTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -381,13 +428,17 @@ public class Dashboard extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        booksTable.setGridColor(new java.awt.Color(125, 226, 209));
         booksTable.setRowHeight(35);
         booksTable.setRowMargin(5);
         booksTableScrollPane.setViewportView(booksTable);
 
+        searchPanel.setBackground(new java.awt.Color(19, 21, 21));
+
         searchTextField.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         searchTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         searchTextField.setToolTipText("Search here");
+        searchTextField.setBorder(null);
         searchTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchTextFieldActionPerformed(evt);
@@ -399,6 +450,9 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        searchLabel.setBackground(new java.awt.Color(252, 163, 17));
+        searchLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        searchLabel.setForeground(new java.awt.Color(125, 226, 209));
         searchLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         searchLabel.setText("Search");
 
@@ -425,37 +479,38 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(125, 226, 209));
         jLabel1.setText("ELE Management System");
 
         javax.swing.GroupLayout tablePanelLayout = new javax.swing.GroupLayout(tablePanel);
         tablePanel.setLayout(tablePanelLayout);
         tablePanelLayout.setHorizontalGroup(
             tablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tablePanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tablePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(tablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(booksTableScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 629, Short.MAX_VALUE)
-                    .addComponent(searchPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(tablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(booksTableScrollPane)
+                    .addComponent(searchPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(tablePanelLayout.createSequentialGroup()
-                .addGap(189, 189, 189)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tablePanelLayout.createSequentialGroup()
+                .addContainerGap(137, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(116, 116, 116))
         );
         tablePanelLayout.setVerticalGroup(
             tablePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tablePanelLayout.createSequentialGroup()
-                .addContainerGap(61, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE)
+                .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(searchPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(booksTableScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 584, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(booksTableScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 570, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
 
         getContentPane().add(tablePanel, java.awt.BorderLayout.CENTER);
@@ -516,6 +571,7 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JTextField id2TextField1;
     private javax.swing.JPanel inputPanel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel priceLabel;
     private javax.swing.JLabel priceLabel1;

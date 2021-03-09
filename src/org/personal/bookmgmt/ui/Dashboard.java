@@ -164,7 +164,6 @@ public class Dashboard extends javax.swing.JFrame {
         publishedByTextField.setText("");
         priceTextField.setText("");
         id2TextField1.setText("");
-        System.out.println("zxc");
     }
     
 
@@ -243,7 +242,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         priceLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        priceLabel1.setText("id2");
+        priceLabel1.setText("Student ID");
 
         id2TextField1.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         id2TextField1.addActionListener(new java.awt.event.ActionListener() {
